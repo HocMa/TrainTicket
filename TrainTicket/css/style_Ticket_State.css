@@ -1,0 +1,74 @@
+.rgn{
+	margin-top:50px;
+}
+.rgn_field{
+	margin:auto;
+	width:900px;
+	border:none;
+}
+.rgn_legend{
+	font-size:40px;
+	font-weight:bold;
+}
+
+
+/* 일반 승차권 */
+.gn_table tr,.gn_table th,.gn_table td{
+	border:1px solid black;
+	padding:3px;
+}
+.gn_table{
+	margin:auto;
+	margin-top:20px;
+	border:1px solid black;
+	border-collapse:collapse;
+	text-align:center;
+}
+.gn_table th,.gn_table td{
+	width:200px;
+	font-size:30px;
+}
+.gn_table td{
+	font-size:25px
+}
+.gn_table th:not(:last-child), .gn_table td:not(:last-child){
+	width:140px;
+}
+
+/* 정기 승차권 */
+.rg_table tr, .rg_table th, .rg_table td{
+	border:1px solid black;
+	padding:3px;
+}
+.rg_table{
+	margin:auto;
+	margin-top:20px;
+	border:1px solid black;
+	border-collapse:collapse;
+	text-align:center;
+}
+.rg_table th, .rg_table td{
+	width:200px;
+	font-size:30px;
+}
+.rg_table td{
+	font-size:25px
+}
+.rg_table td:nth-child(3){
+	width:300px;
+}
+.rg_table th:not(:last-child), .rg_table td:not(:last-child){
+	width:140px;
+}
+
+/* 취소 버튼 */
+.cncBtn{
+	width:180px;
+	height:60px;
+	font-size:25px;
+	font-weight:bold;
+}
+.msg{
+	margin-top:10px;
+	text-align:center;
+}

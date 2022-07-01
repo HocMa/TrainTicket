@@ -1,0 +1,50 @@
+/* view, writeForm */
+
+.board{
+	margin:auto;
+	margin-top:30px;
+}
+.boardCap{
+	margin-top:10px;
+	caption-side:bottom;
+}
+.board a{
+	font-size:20px;
+	color:black;
+}
+.board a:visited{
+	color:black;
+}
+.board td{
+	width:600px;
+	padding-top:10px;
+}
+.board tr:first-child td{
+	font-size:40px;
+	font-weight:bold;
+}
+.ttl{
+	font-size:30px;
+}
+.board tr:nth-child(2) td{
+	font-size:30px;
+	font-weight:bold;
+	border-top:2px solid black;
+	padding-left:15px;
+}
+.board tr:last-child td{
+	font-size:20px;
+	padding-left:35px;
+}
+.board button{
+	width:60px;
+	height:30px;
+	font-size:20px;
+}
+#sub{
+	font-size:30px;
+	font-weight:bold;
+}
+#cntt{
+	font-size:20px;
+}

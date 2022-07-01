@@ -1,0 +1,67 @@
+/*로그인 폼*/
+#login_Form{
+    margin:0px auto;
+    margin-top:80px;
+    text-align:center;  
+}
+#login_Form td{
+	padding:10px;
+}
+#login_Form label{
+    font-size:25px;
+    font-weight:bold;
+}
+
+/*autocomplete 속성 사용시 background image가 없어짐*/
+#login_Form input{
+    width:300px;
+    height:60px;
+    font-size:25px;
+    background-size:25px;
+    background-position:5px center;
+    background-repeat:no-repeat;
+    padding-left:40px;
+}
+#user_id{ 
+    background-image:url("images/id.png");
+}
+#user_pw{
+    background-image:url("images/pw.png");
+}
+#login_Form button{
+    width:80px;
+    height:155px;
+    font-size:30px;
+    font-weight:bold;
+    background-color:chocolate;
+    border:1px solid black;
+    border-radius:5%;
+    cursor: pointer;
+}
+
+ul{
+    float:right;
+}
+
+ul li{
+    list-style-type:none;
+    text-align:center;
+    display:inline-block;
+    padding: 0px 5px;
+}
+
+li a{
+    text-decoration:none;
+    color:black;
+    font-size:20px;
+    font-weight:bold;
+}
+
+ul li:not(:first-child){
+    border-left:2px solid black;
+    padding-left:10px;
+}
+.bottom{
+    padding-top:0px;
+    caption-side: bottom;
+}

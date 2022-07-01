@@ -1,0 +1,134 @@
+fieldset{
+    margin:10px;
+    /* border:1px solid black; */
+    border:none;
+}
+
+/*승차권 예매 박스*/
+#buyTicketBox{
+    height:320px;
+    position:relative;
+    border:2px solid black;
+    background-color:cyan;
+    margin-top: 25px;
+}
+#ticketBox{
+    margin: 10px 20px;
+}
+#ticketBox tr td:first-child:not(:last-child){
+	width:350px;
+	padding-left:50px;
+}
+
+#buyTickForm fieldset legend{
+    background-color: white;
+}
+legend{
+    font-size:35px;
+    font-weight:600; 
+}
+
+/*승차권 종류*/
+#ticket_kinds{
+    width:300px;
+}
+
+#ticket_kinds label{
+    font-size:25px;
+    font-weight:bold;
+    padding: 0px 10px;
+    cursor:pointer;
+}
+
+#ticket_kinds label input{
+    width:15px;
+    height:15px;
+    cursor:pointer;
+}
+
+/*열차 종류*/
+#train_kinds{
+    width:380px;
+    height:80px;
+}
+
+#train_kinds label{
+    font-size:25px;
+    font-weight:bold;
+    padding: 0px 20px;
+}
+#train_kinds label input{
+    width:15px;
+    height:15px;
+}
+
+
+/*인원 정보*/
+#pp_num{
+    margin-top:0px;
+    width:380px;
+}
+#pp_num label{
+    font-size:25px;
+    font-weight:bold;
+    margin:10px;
+}
+
+
+#pp_num select{
+    margin-top:10px;
+    font-size:20px;
+    font-weight:bold;
+    width:80px;
+    height:40px;
+}
+
+.visible{
+	display:none;
+}
+
+
+
+
+/*출발-도착역*/
+#select_Station{
+    margin-top:0px;
+}
+#select_Station label{
+    font-size:25px;
+    font-weight:bold;
+}
+#select_Station input{
+    font-size:20px;
+    width:200px;
+    height:35px;
+    margin:5px;
+}
+
+
+/*날짜*/
+#for_date{
+	font-size:25px;
+	font-weight:bold;
+	margin-left:25px;
+}
+#date{
+	margin-left:10px;
+	width:150px;
+	height:40px;
+	font-size:20px;
+	font-weight:bold;
+}
+
+/*조회 버튼*/
+#ticket_chkBtn{
+    position:absolute;
+    bottom:0px;
+    right:0px;
+    width:200px;
+    height:60px;
+    font-size:30px;
+    font-weight:bold;
+    background-color: chocolate;
+    cursor:pointer;
+}

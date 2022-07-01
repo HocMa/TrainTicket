@@ -1,0 +1,179 @@
+body{
+    width:960px;
+    margin:0 auto;
+    padding:10px;
+}
+#slideShow{
+    position:relative;
+    width:940px;
+    height:350px;
+    margin:10px;
+    overflow:hidden;
+}
+#announce{
+    width:460px;
+    height:300px;
+    margin-left:10px;
+    float:left;
+}
+#member{
+    width:460px;
+    height:300px;
+    margin-right:10px;
+    float:right;
+}
+fieldset{
+	height:260px;
+}
+
+legend{
+    font-size:30px;
+    font-weight:600; 
+}
+
+/*메인 슬라이드*/
+.inner_list{
+	display:flex;
+	height:100%;
+}
+.inner img{
+	width:100%;
+	height:100%;
+}
+.slideState{
+    position:absolute;
+    right:30px;
+    bottom:0px;
+}
+
+.slideState li {
+    display:inline-block;
+    list-style:none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: gray;
+    vertical-align: middle;
+}
+
+.slideState button {
+    border:1px solid black;
+    vertical-align: middle;
+    font-size:20px;
+    font-weight:bolder;
+    width: 30px;
+    height: 30px;
+    background-color: aquamarine;
+    cursor: pointer;
+}
+
+.slideState> li.on {
+    background-color: #2f2c2c;
+}
+
+
+/*공지사항*/
+#anc{
+	width:400px;
+	margin: auto;
+}
+#anc tr td:not(:first-child){
+	text-align:right;
+	padding-right:25px;
+}
+#anc tr td:first-child{
+    width:250px;
+}
+#anc tr td{
+    height:27px;
+}
+#anc a{
+	text-decoration:none;
+    color:black;
+    font-weight:bold;
+}
+
+/* 로그인 */
+#member input{
+    width:280px;
+    height:50px;
+    font-size:20px;
+    background-size:25px;
+    background-position:5px center;
+    background-repeat:no-repeat;
+    padding-left:40px;
+}
+#login_form{
+    margin:0px auto;
+    margin-top:25px;
+}
+/*autocomplete 속성 사용시 background image가 없어짐*/
+#user_id{ 
+    background-image:url("images/id.png");
+    -webkit-appearance: none;
+}
+#user_id:-webkit-autofill{
+	background-image:url("images/id.png");
+	-webkit-appearance: none;
+	-webkit-box-shadow: 0 0 0 1000px white inset !important;
+}
+#user_pw{
+    background-image:url("images/pw.png");
+}
+#memberLogIn #logIn{
+    margin-left:10px;
+    width:80px;
+    height:130px;
+    font-size:30px;
+    font-weight:bolder;
+    background-color:chocolate;
+    border:1px solid black;
+    border-radius:5%;
+    cursor: pointer;
+}
+#login_form ul li{
+    list-style-type:none;
+    display:inline-block;
+    text-align:center;
+    padding: 0px 5px;
+}
+
+#login_form li a{
+    text-decoration:none;
+    color:black;
+    font-size:18px;
+    font-weight:bold;
+}
+
+#login_form ul li:not(:first-child){
+    border-left:2px solid black;
+    padding-left:10px;
+}
+.bottom{
+    padding-top:0px;
+    caption-side: bottom;
+    text-align:right;
+}
+
+
+
+/*로그인 후 메인페이지*/
+#logout_form{
+	margin:0 auto;
+	margin-top:10px;
+}
+#logout_form h1{
+	text-align:center;
+}
+#logout{
+    margin-left:30px;
+    width:70px;
+    height:160px;
+    font-size:27px;
+    font-weight:bolder;
+    background-color:chocolate;
+    border:1px solid black;
+    border-radius:5%;
+    cursor: pointer;
+}
