@@ -25,6 +25,7 @@ public class TrainInfo implements java.io.Serializable{
 	public TrainInfo(){
 	}
 	
+	/* 최종 도출 */
 	public ArrayList<ArrayList<String>> getTrainInfo(String depStCode, String arrvStCode, String trainKnd, String depTime, String cnt) throws IOException {
 		ArrayList<ArrayList<String>> finalInfo = new ArrayList<ArrayList<String>>();
 		if(trainKnd.equals("KTX")){
@@ -42,17 +43,17 @@ public class TrainInfo implements java.io.Serializable{
 	        ArrayList<String> arrSortKey = new ArrayList<String>();
 	        
 	        // Key에 해당하는 Data를 추출하고, 정렬한다.
-	        for( int i = 0; i < temInfo.size(); i++ ) arrSortKey.add( temInfo.get( i ).get( 2 ) );
-	        Collections.sort( arrSortKey );
+	        for( int i=0; i<temInfo.size(); i++) arrSortKey.add(temInfo.get(i).get(2));
+	        Collections.sort(arrSortKey);
 	        
 	        // 정렬된 Key정보를 이용하여 데이터를 추출, 적재한다.
-	        for( int i = 0; i < arrSortKey.size(); i++ ) {
+	        for(int i=0; i<arrSortKey.size(); i++){
 	            
-	            for( int k = 0; k < temInfo.size(); k++ ) {
+	            for(int k=0; k<temInfo.size(); k++){
 	                
-	                if( arrSortKey.get( i ).equals( temInfo.get( k ).get( 2 ) ) ) {
+	                if(arrSortKey.get(i).equals(temInfo.get(k).get(2))){
 	                    
-	                	finalInfo.add(temInfo.get( k ));
+	                	finalInfo.add(temInfo.get(k));
 	                    temInfo.remove(k);
 	                    break;
 	                }

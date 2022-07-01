@@ -9,9 +9,10 @@ $(function(){
 		$(this).css({"width":slideWidth});
 	});
 	
-	innerList.css({"width":slideWidth*inners.length}); // innerList의 width를 inner의 width * inner의 개수로 만들기
+	// innerList의 width를 inner의 width * inner의 개수로 만들기
+	innerList.css({"width":slideWidth*inners.length}); 
 	
-	 $(".slideState").children().on("click", function(){
+	$(".slideState").children().on("click", function(){
         if($(this).hasClass("beforeBtn")){
             if(cnt==0){
 				innerList.animate({marginLeft:"-="+slideWidth*(inners.length-1)});
