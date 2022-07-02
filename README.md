@@ -105,9 +105,11 @@ TrainInfo()에서 현재시간과 기차시간을 비교하는 반복문을 넣�
 ````
 위의 코드를 BuyTicket.jsp에 작성함으로써 사용자가 현재 날짜 이전의 날짜를 입력하지 못하게 조정하였다.<br>
 <br>
-p.s. 공공API에서 해당 기차의 가격을 받아올 때 0으로 입력된 값이 많아 TicketGn.jsp파일에서 가격을 임의로 지정해 주었다.
-
+p.s. 공공API에서 기차의 가격이 0으로 된것이 많아 TicketGn.jsp파일에서 가격을 임의로 지정해 주었다.
 
 
 # MVC패턴을 기반으로 모델2 게시판 구현
-
+<img src="https://user-images.githubusercontent.com/90808284/177004873-72251bd6-506f-44b0-8450-c294311017fb.PNG" widht="400px" height="200px" alt="Slide Composition"><img><br>
+위는 게시판을 구현할 때 사용한 MVC패턴을 모식화한 것이다.<br>
+<br>
+list.jsp파일에서 현재 로그인 중인 id를 session으로 판별하여 관리자 계정인 'admin'이면 글쓰기 링크가 보이도록 하였고, view.jsp에서 또한 관리자 계정을 판별하여 게시글을 수정할 수 있도록 하였다.
