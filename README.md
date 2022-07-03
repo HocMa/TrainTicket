@@ -105,9 +105,37 @@ TrainInfo()에서 현재시간과 기차시간을 비교하는 반복문을 넣�
 ````
 위의 코드를 BuyTicket.jsp에 작성함으로써 사용자가 현재 날짜 이전의 날짜를 입력하지 못하게 조정하였다.<br>
 <br>
-p.s. 공공API에서 해당 기차의 가격을 받아올 때 0으로 입력된 값이 많아 TicketGn.jsp파일에서 가격을 임의로 지정해 주었다.
-
+p.s. 공공API에서 기차의 가격이 0으로 된것이 많아 TicketGn.jsp파일에서 가격을 임의로 지정해 주었다.
 
 
 # MVC패턴을 기반으로 모델2 게시판 구현
+<img src="https://user-images.githubusercontent.com/90808284/177004873-72251bd6-506f-44b0-8450-c294311017fb.PNG" widht="400px" height="400px" alt="Slide Composition"><img><br>
+위는 게시판을 구현할 때 사용한 MVC패턴을 모식화한 것이다.<br>
+<br>
+list.jsp파일에서 현재 로그인 중인 id를 session으로 판별하여 관리자 계정이면 글쓰기 링크가 보이도록 하였고, view.jsp에서 또한 관리자 계정을 판별하여 게시글을 수정할 수 있도록 하였다.<br>
+<br>
+<img src="https://user-images.githubusercontent.com/90808284/177034732-7bbcd3e6-bee8-47ad-9346-d824e6d07fa4.PNG" widht="400px" height="400px" alt="Slide Composition"><img><br>
+<br><br>
+<img src="https://user-images.githubusercontent.com/90808284/177034742-29133c7b-c06c-402e-a2ea-84dd16183bb6.PNG" widht="400px" height="400px" alt="Slide Composition"><img><br>
+
+```
+private class BoardController extends HttpServlet{
+  private static final long serialVersionUID = 1L;
+  
+  public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		doPost(request, response);
+	}
+	
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+  생략...
+  }
+```
+BoardController 클래스에서 상수로 serialVersionUID를 선언해 주었다. 직렬화와 역직렬화 과정에서 serialVersionUID가 달라지게 되면 InvalidClassException가 발생하는데 이를 예방하기 위해서 선언해 주었다.<br>
+자세한 내용은<br>
+https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=kkson50&logNo=220564273220 <br>
+https://javafactory.tistory.com/1388 <br>
+을 참고 바란다. <br>
+<br>
+doGet() 메소드에 doPost()메소드를 넣음으로써 결론적으로 doPost()를 실행하여 URL데이터 노출을 방지하였다.
+
 
