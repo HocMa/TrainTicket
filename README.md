@@ -113,7 +113,9 @@ p.s. 공공API에서 기차의 가격이 0으로 된것이 많아 TicketGn.jsp�
 위는 게시판을 구현할 때 사용한 MVC패턴을 모식화한 것이다.<br>
 <br>
 list.jsp파일에서 현재 로그인 중인 id를 session으로 판별하여 관리자 계정이면 글쓰기 링크가 보이도록 하였고, view.jsp에서 또한 관리자 계정을 판별하여 게시글을 수정할 수 있도록 하였다.<br>
+<br>
 <img src="https://user-images.githubusercontent.com/90808284/177034732-7bbcd3e6-bee8-47ad-9346-d824e6d07fa4.PNG" widht="400px" height="400px" alt="Slide Composition"><img><br>
+<br><br>
 <img src="https://user-images.githubusercontent.com/90808284/177034742-29133c7b-c06c-402e-a2ea-84dd16183bb6.PNG" widht="400px" height="400px" alt="Slide Composition"><img><br>
 
 ```
