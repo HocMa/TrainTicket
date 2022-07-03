@@ -15,7 +15,7 @@ import board.model.BoardDAO;
 import board.model.BoardDTO;
 	
 public class BoardController extends HttpServlet{
-	private static final long serialVerionUID = 1L;
+	private static final long serialVersionUID = 1L;
 	static final int LISTCOUNT = 5;
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{

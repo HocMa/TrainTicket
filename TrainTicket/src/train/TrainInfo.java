@@ -21,7 +21,8 @@ import java.io.BufferedReader;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class TrainInfo implements java.io.Serializable{
+public class TrainInfo implements Serializable{
+	private static final long serialVersionUID = 2L;
 	public TrainInfo(){
 	}
 	
