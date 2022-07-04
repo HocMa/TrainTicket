@@ -18,7 +18,7 @@
 		PreparedStatement pstmt = null;
 		
 		try{
-			String sql = "insert into rgtickets value(?,?,?,?,?,?)";
+			String sql = "insert into rgtickets(user_id, train_kind, depSt, arrvSt, fdate, ldate) value(?,?,?,?,?,?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, session_id);
 			pstmt.setString(2, ticket[0]);

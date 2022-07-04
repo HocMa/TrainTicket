@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.text.NumberFormat" %>
+<%@ page import="java.util.Collections" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -69,25 +70,40 @@
 						<jsp:useBean id="trainInfo" class="train.TrainInfo"/>
 						<%
 							ArrayList<ArrayList<String>> info = trainInfo.getTrainInfo(depStCode, arrvStCode, train_kind, date, cnt);
-						
-							for(int i=0; i<info.size(); i++){
-								String depTime = TimeSet(info.get(i).get(2));
-								String arrvTime = TimeSet(info.get(i).get(3));
-								
-								String ticket = info.get(i).get(0)+","+info.get(i).get(1)+","+depSt+","+depTime+","+arrvSt+","+arrvTime+","+sdate+","+adult_num+","+child_num;
-								
-								int value;
-								if(info.get(i).get(0).equals("KTX")){
-									value = 10000;
-								} else{
-									value = 5000;
-								}
-								String price = NumberFormat.getInstance().format(value*adult_num + value/2*child_num);
-								
-								out.print("<tr><td>"+info.get(i).get(0)+"<br>"+info.get(i).get(1)+"</td><td>"
-									+depSt+"<br>"+depTime+"</td><td>"+arrvSt+"<br>"+arrvTime+
-									"</td><td><button class='btn' name='gn_ticket' value='"+ticket+"'>"+price+"</button></td></tr>");
-							}
+							
+							// 정렬할 key를 지정한다.
+					        ArrayList<String> arrSortKey = new ArrayList<String>();
+					        
+					        // Key에 해당하는 Data를 추출하고, 정렬한다.
+					        for( int i=0; i<info.size(); i++) arrSortKey.add(info.get(i).get(2));
+					        Collections.sort(arrSortKey);
+					        
+					        // 정렬된 Key정보를 이용하여 데이터를 추출, 적재한다.
+					        for(int i=0; i<arrSortKey.size(); i++){
+					            
+					            for(int j=0; j<info.size(); j++){
+					                
+					                if(arrSortKey.get(i).equals(info.get(j).get(2))){
+					                	String depTime = TimeSet(info.get(j).get(2));
+										String arrvTime = TimeSet(info.get(j).get(3));
+										
+										String ticket = info.get(j).get(0)+","+info.get(j).get(1)+","+depSt+","+depTime+","+arrvSt+","+arrvTime+","+sdate+","+adult_num+","+child_num;
+										
+										int value;
+										if(info.get(i).get(0).equals("KTX")){
+											value = 10000;
+										} else{
+											value = 5000;
+										}
+										String price = NumberFormat.getInstance().format(value*adult_num + value/2*child_num);
+										
+										out.print("<tr><td>"+info.get(j).get(0)+"<br>"+info.get(j).get(1)+"</td><td>"
+											+depSt+"<br>"+depTime+"</td><td>"+arrvSt+"<br>"+arrvTime+
+											"</td><td><button class='btn' name='gn_ticket' value='"+ticket+"'>"+price+"</button></td></tr>");
+										break;
+									}
+					            }
+					        }	
 						%>
 					</tbody>
 				</table>

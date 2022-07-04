@@ -8,7 +8,6 @@ import java.net.URLEncoder;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Collections;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -34,32 +33,10 @@ public class TrainInfo implements Serializable{
 		} else if(trainKnd.equals("ITX")){
 			finalInfo = TrainlInfo(depStCode, arrvStCode, "08", cnt, depTime);
 		} else {
-			ArrayList<ArrayList<String>> temInfo = new ArrayList<ArrayList<String>>();
 			ArrayList<ArrayList<String>> finalInfo_1 = TrainlInfo(depStCode, arrvStCode, "00", cnt, depTime);
 			ArrayList<ArrayList<String>> finalInfo_2 = TrainlInfo(depStCode, arrvStCode, "08", cnt, depTime);
-			temInfo.addAll(finalInfo_1);
-			temInfo.addAll(finalInfo_2);
-  
-	        // 정렬할 key를 지정한다.
-	        ArrayList<String> arrSortKey = new ArrayList<String>();
-	        
-	        // Key에 해당하는 Data를 추출하고, 정렬한다.
-	        for( int i=0; i<temInfo.size(); i++) arrSortKey.add(temInfo.get(i).get(2));
-	        Collections.sort(arrSortKey);
-	        
-	        // 정렬된 Key정보를 이용하여 데이터를 추출, 적재한다.
-	        for(int i=0; i<arrSortKey.size(); i++){
-	            
-	            for(int k=0; k<temInfo.size(); k++){
-	                
-	                if(arrSortKey.get(i).equals(temInfo.get(k).get(2))){
-	                    
-	                	finalInfo.add(temInfo.get(k));
-	                    temInfo.remove(k);
-	                    break;
-	                }
-	            }
-	        }
+			finalInfo.addAll(finalInfo_1);
+			finalInfo.addAll(finalInfo_2);
 		}
 		return finalInfo;
 	}

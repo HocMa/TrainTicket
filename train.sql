@@ -51,6 +51,7 @@ DROP TABLE IF EXISTS `gntickets`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `gntickets` (
+  `num` int NOT NULL AUTO_INCREMENT,
   `id` varchar(20) NOT NULL,
   `train_kind` varchar(10) NOT NULL,
   `train_no` varchar(10) NOT NULL,
@@ -61,10 +62,10 @@ CREATE TABLE `gntickets` (
   `date` varchar(20) NOT NULL,
   `adult` int NOT NULL,
   `child` int NOT NULL,
-  PRIMARY KEY (`train_no`),
+  PRIMARY KEY (`num`),
   KEY `id_idx` (`id`),
   CONSTRAINT `id` FOREIGN KEY (`id`) REFERENCES `member` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,7 +74,7 @@ CREATE TABLE `gntickets` (
 
 LOCK TABLES `gntickets` WRITE;
 /*!40000 ALTER TABLE `gntickets` DISABLE KEYS */;
-INSERT INTO `gntickets` VALUES ('guest','ITX-새마을','1001','서울','06 : 20','부산','11 : 04','2022. 07. 05',1,0),('user','ITX-새마을','1006','대구','12 : 50','서울','16 : 12','2022. 06. 30',2,1),('user','ITX-새마을','1011','서울','15 : 55','대구','19 : 10','2022. 07. 01',2,1),('guest','KTX','42','부산','15 : 01','서울','17 : 25','2022. 07. 06',1,1);
+INSERT INTO `gntickets` VALUES (2,'user','ITX-새마을','1006','대구','12 : 50','서울','16 : 12','2022. 06. 30',2,1),(3,'user','ITX-새마을','1011','서울','15 : 55','대구','19 : 10','2022. 07. 01',2,1),(6,'guest','ITX-새마을','1001','서울','06 : 20','대구','09 : 43','2022. 07. 05',1,0),(7,'guest','ITX-새마을','1001','서울','06 : 20','대구','09 : 43','2022. 07. 05',1,0);
 /*!40000 ALTER TABLE `gntickets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -111,13 +112,14 @@ DROP TABLE IF EXISTS `rgtickets`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `rgtickets` (
+  `num` int NOT NULL,
   `user_id` varchar(20) NOT NULL,
   `train_kind` varchar(10) NOT NULL,
   `depSt` varchar(10) NOT NULL,
   `arrvSt` varchar(10) NOT NULL,
   `fdate` varchar(20) NOT NULL,
   `ldate` varchar(20) NOT NULL,
-  PRIMARY KEY (`train_kind`),
+  PRIMARY KEY (`num`),
   KEY `id_idx` (`user_id`),
   CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `member` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -129,7 +131,7 @@ CREATE TABLE `rgtickets` (
 
 LOCK TABLES `rgtickets` WRITE;
 /*!40000 ALTER TABLE `rgtickets` DISABLE KEYS */;
-INSERT INTO `rgtickets` VALUES ('user','KTX','구미','대구','2022. 07. 04','2022. 08. 03');
+INSERT INTO `rgtickets` VALUES (0,'user','KTX','구미','대구','2022. 07. 04','2022. 08. 03');
 /*!40000 ALTER TABLE `rgtickets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -174,4 +176,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-30 10:44:09
+-- Dump completed on 2022-07-04 12:14:15
