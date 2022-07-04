@@ -51,7 +51,7 @@
 						<td><%=rs.getString("arrvSt")%><br><%=rs.getString("arrvTime")%></td>
 						<td><%=rs.getString("date")%></td>
 						<td>어른: <%=rs.getString("adult")%><br>아이: <%=rs.getString("child")%></td>
-						<%String gnvalue = rs.getString("train_kind")+","+rs.getString("train_no");%>
+						<%String gnvalue = rs.getString("num");%>
 						<td><button class="cncBtn" name="cancel" value="<%=gnvalue %>">예매 취소</button></td>
 					<tr>
 				<%
@@ -63,7 +63,7 @@
 					String arrvSt = rs.getString("arrvSt");
 					String arrvTime = rs.getString("arrvTime");
 					
-					gnvalue = rs.getString("train_kind")+","+rs.getString("train_no");
+					gnvalue = rs.getString("num");
 					%>
 						<tr>
 							<td><%=train_kind%><br><%=train_no%></td>
@@ -115,7 +115,7 @@
 						<td><%=rs.getString("depSt")%></td>
 						<td><%=rs.getString("arrvSt")%></td>
 						<td><%=rs.getString("fdate")%><br>~<br><%=rs.getString("ldate")%></td>
-						<%String rgvalue = rs.getString("train_kind")+","+rs.getString("depSt")+","+rs.getString("arrvSt")+","+rs.getString("fdate")+","+rs.getString("ldate");%>
+						<%String rgvalue = rs.getString("num");%>
 						<td><button class="cncBtn" name="cancel" value="<%=rgvalue %>">예매 취소</button></td>
 					</tr>
 				</tbody>
@@ -127,7 +127,7 @@
 					String fdate = rs.getString("fdate");
 					String ldate = rs.getString("ldate");
 					
-					rgvalue = train_kind+","+depSt+","+arrvSt+","+fdate+","+ldate;
+					rgvalue = rs.getString("num");
 					%>
 						<tr>
 							<td><%=train_kind%></td>

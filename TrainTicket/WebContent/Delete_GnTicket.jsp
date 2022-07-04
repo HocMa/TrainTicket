@@ -10,15 +10,13 @@
 	<%@ include file="dbconn.jsp" %>
 	<%
 		request.setCharacterEncoding("UTF-8");
-		String[] rdata = request.getParameter("cancel").split(",");
-		String train_kind = rdata[0];
-		String train_no = rdata[1];
+		String num = request.getParameter("cancel");
 		
-		ResultSet rs = null;
+		ResultSet rs =null;
 		Statement stmt = null;
 		
 		try{
-			String sql = "delete from gntickets where train_kind='"+train_kind+"' and train_no='"+train_no+"'";
+			String sql = "delete from gntickets where num='"+num+"'";
 			stmt = conn.createStatement();
 			stmt.executeUpdate(sql);
 		} catch(SQLException ex){
