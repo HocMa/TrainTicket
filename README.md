@@ -23,7 +23,7 @@
 
 # JDBC로 MySQL과 JSP연동하기
 <img src="https://user-images.githubusercontent.com/90808284/176825204-61e6d5a5-8f27-4362-ba7a-4d65528b07cb.JPG" widht="500px" height="300px" alt="Slide Composition"><img><br>
-Class.forName()을 사용하여 JDBC의 mysql드라이버를 로들하는 코드이다. 쓰이는 곳이 많으니 다른 파일에서 디렉티브 태그의 include를 사용하여 사용할 수 있도록 dbconn.jsp를 만들었다.
+Class.forName()을 사용하여 JDBC의 mysql드라이버를 로하는 코드이다. 쓰이는 곳이 많으니 다른 파일에서 디렉티브 태그의 include를 사용하여 사용할 수 있도록 dbconn.jsp를 만들었다.
 
 
 # 공공API에서 기차 데이터 가져오기(src파일)
