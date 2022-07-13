@@ -36,7 +36,7 @@
 		%>
 			<jsp:forward page="errorPage.jsp">
 				<jsp:param name="errorType" value="<%=ex%>"/>
-				<jsp:param name="errorMsg" value="<%=ex.getMessage()%>"/>
+				<jsp:param name="errorMsg" value="<%=ex.getMessage()+ticket[3]%>"/>
 			</jsp:forward>
 		<%;
 		} finally{

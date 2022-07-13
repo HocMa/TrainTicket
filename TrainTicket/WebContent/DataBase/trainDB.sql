@@ -39,7 +39,7 @@ CREATE TABLE `board` (
 
 LOCK TABLES `board` WRITE;
 /*!40000 ALTER TABLE `board` DISABLE KEYS */;
-INSERT INTO `board` VALUES (1,' 첫 번째 공지사항입니다.',' 첫 번째 공지사항입니다.\r\n첫 내용입니다.','2022. 06. 30.',1,'0:0:0:0:0:0:0:1'),(2,' 두 번째 공지사항입니다.','두 번째 공지사항입니다.\r\n두 번째 내용입니다.','2022. 06. 30.',3,'0:0:0:0:0:0:0:1'),(3,' 세 번째 공지사항입니다.','세 번째 공지사항입니다.\r\n세 번째 내용입니다.','2022. 06. 30.',2,'0:0:0:0:0:0:0:1'),(4,'네 번째 공지사항입니다.',' 네 번째 공지사항입니다.\r\n네 번째 내용입니다.','2022. 06. 30.',0,'0:0:0:0:0:0:0:1'),(5,'다섯 번째 공지사항입니다.',' 다섯 번째 공지사항입니다.\r\n다섯 번째 내용입니다.','2022. 06. 30.',0,'0:0:0:0:0:0:0:1'),(6,'여섯 번째 공지사항입니다.',' 여섯 번째 공지사항입니다.\r\n여섯 번째 내용입니다.','2022. 06. 30.',1,'0:0:0:0:0:0:0:1'),(11,'일곱 번째 공지사항입니다.',' 일곱 번째 공지사항입니다.\r\n일곱 번째 내용입니다.','2022. 06. 30.',0,'0:0:0:0:0:0:0:1');
+INSERT INTO `board` VALUES (1,' 첫 번째 공지사항입니다.',' 첫 번째 공지사항입니다.\r\n첫 내용입니다.','2022. 06. 30.',1,'0:0:0:0:0:0:0:1'),(2,' 두 번째 공지사항입니다.','두 번째 공지사항입니다.\r\n두 번째 내용입니다.','2022. 06. 30.',3,'0:0:0:0:0:0:0:1'),(3,' 세 번째 공지사항입니다.','세 번째 공지사항입니다.\r\n세 번째 내용입니다.','2022. 06. 30.',2,'0:0:0:0:0:0:0:1'),(4,'네 번째 공지사항입니다.',' 네 번째 공지사항입니다.\r\n네 번째 내용입니다.','2022. 06. 30.',1,'0:0:0:0:0:0:0:1'),(5,'다섯 번째 공지사항입니다.',' 다섯 번째 공지사항입니다.\r\n다섯 번째 내용입니다.','2022. 06. 30.',0,'0:0:0:0:0:0:0:1'),(6,'여섯 번째 공지사항입니다.',' 여섯 번째 공지사항입니다.\r\n여섯 번째 내용입니다.','2022. 06. 30.',2,'0:0:0:0:0:0:0:1'),(11,'일곱 번째 공지사항입니다.',' 일곱 번째 공지사항입니다.\r\n일곱 번째 내용입니다.','2022. 06. 30.',1,'0:0:0:0:0:0:0:1');
 /*!40000 ALTER TABLE `board` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -65,7 +65,7 @@ CREATE TABLE `gntickets` (
   PRIMARY KEY (`num`),
   KEY `id_idx` (`id`),
   CONSTRAINT `id` FOREIGN KEY (`id`) REFERENCES `member` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,7 +74,7 @@ CREATE TABLE `gntickets` (
 
 LOCK TABLES `gntickets` WRITE;
 /*!40000 ALTER TABLE `gntickets` DISABLE KEYS */;
-INSERT INTO `gntickets` VALUES (2,'user','ITX-새마을','1006','대구','12 : 50','서울','16 : 12','2022. 06. 30',2,1),(3,'user','ITX-새마을','1011','서울','15 : 55','대구','19 : 10','2022. 07. 01',2,1),(6,'guest','ITX-새마을','1001','서울','06 : 20','대구','09 : 43','2022. 07. 05',1,0),(7,'guest','ITX-새마을','1001','서울','06 : 20','대구','09 : 43','2022. 07. 05',1,0);
+INSERT INTO `gntickets` VALUES (7,'guest','ITX-새마을','1001','서울','06 : 20','대구','09 : 43','2022. 07. 05',1,0);
 /*!40000 ALTER TABLE `gntickets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -100,7 +100,7 @@ CREATE TABLE `member` (
 
 LOCK TABLES `member` WRITE;
 /*!40000 ALTER TABLE `member` DISABLE KEYS */;
-INSERT INTO `member` VALUES ('admin','administrator','123123-123123','123123'),('guest','guest','123123-1234567','guest123'),('user','user','123456-1234567','123456');
+INSERT INTO `member` VALUES ('admin','administrator','123123-123123','123123'),('guest','guest','123123-1234567','guest123'),('user','user','123123-1231234','123123');
 /*!40000 ALTER TABLE `member` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,7 +112,7 @@ DROP TABLE IF EXISTS `rgtickets`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `rgtickets` (
-  `num` int NOT NULL,
+  `num` int NOT NULL AUTO_INCREMENT,
   `user_id` varchar(20) NOT NULL,
   `train_kind` varchar(10) NOT NULL,
   `depSt` varchar(10) NOT NULL,
@@ -122,7 +122,7 @@ CREATE TABLE `rgtickets` (
   PRIMARY KEY (`num`),
   KEY `id_idx` (`user_id`),
   CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `member` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -131,7 +131,7 @@ CREATE TABLE `rgtickets` (
 
 LOCK TABLES `rgtickets` WRITE;
 /*!40000 ALTER TABLE `rgtickets` DISABLE KEYS */;
-INSERT INTO `rgtickets` VALUES (0,'user','KTX','구미','대구','2022. 07. 04','2022. 08. 03');
+INSERT INTO `rgtickets` VALUES (2,'admin','KTX','서울','대구','2022. 07. 12','2022. 08. 11'),(3,'user','KTX','서울','대구','2022. 07. 11','2022. 08. 10');
 /*!40000 ALTER TABLE `rgtickets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -176,4 +176,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-04 12:14:15
+-- Dump completed on 2022-07-12 10:49:44
